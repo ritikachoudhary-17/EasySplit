@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Include the JavaScript file "asd.js" -->
+  <script language="javascript" type="text/javascript" src="asd.js"></script>
+  <!-- firebase services we are able to use only if we include these scripts in our file 
+		i> for firebase initialization
+		ii> for firebase authentication service
+		iii> for firebase realtime database service
+	-->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <title>Easy Split</title>
+  <link rel="stylesheet" href="./cssFiles/index.css">
+  <link rel="icon" href="./image.ico">
+</head>
+
+<body>
+  <!-- Top navigation bar -->
+  <div class="topnav">
+    <div style="text-align: center;"><a href="index.html"><img src="https://i.ibb.co/YdzQRG3/11.png" width="160" height="43.5" </a></div>
+    <button id="Register"><a href="signUp.html">Register</a></button>
+    <button id="Logout" hidden="hidden" onclick="logoutfunc()"><a href="index.html">Log Out</a></button>
+    <button id="About"><a class="active" href="about.html">About</a></button>
+    <button id="Howtouse"><a href="howtouse.html">How to use</a></button>
+    <button id="Contact"><a href="contact.html">Meet us</a></button>
+  </div>
+  <u>
+    <img src="./image.png" height="100" width="100">
+  </u>
+  <h3 id="nameOfUser"></h3><br \>
+  <h2>Split all your group expenses in just one click</h2>
+  <form name="index" action="getStarted.html" method="get">
+    <input type="text" id="tripname" name="n" placeholder="Enter Trip Name"><br \><br \>
+    <button type="button" id="getstarted" onClick="testJS()"> Get Started </button>
+  </form>
+  <div id="prevTrip" hidden="hidden">
+    <h2>Previous Trips</h2>
+    <div id="details">
+
+    </div>
+  </div>
+  <h2>What you get?</h2>
+  <div class="cpimg"><img src="https://i.ibb.co/ZSKhKXC/cpimg-thumbnail.png" width="250px" height="250px"></div>
+  <div class="matter">Everyone pays something for a group of people on vacations, for gifts, at parties and so on. Even
+    with a calculator, calculating the payments afterwards to balance out the group can be a challenging and difficult
+    task, especially when some expenses are not shared by all group members. <br \>
+    Easy Split helps you with that: After you entered everyone's name and the spendings she or he had for the group, the
+    Easy Split calculator shows you who owes whom how much and how to settle debts in the group.</div>
+  <div class="label">
+    <h2>Good to know...</h2>
+    <div class="row">
+      <div class="column"><img src="https://i.ibb.co/xYpYynh/gift.png" width="100px" height="100px"
+          alt="a gift box" /><br \>
+        It's free.<br \>It is easy to use.<br \></div>
+      <div class="column"><img src="https://i.ibb.co/VSTZQ3G/use-thumbnail.png" width="100px" height="100px"
+          alt="a clipboard" /><br \>Register<br />Login<br \></div>
+      <div class="column"><img src="https://i.ibb.co/tLrFzjY/downloadicon.png" width="100px" height="100px"
+          alt="pencils" /><br \>
+        Save the result.<br />Download as pdf.<br /></div>
+    </div>
+
+    <!-- JavaScript code for Firebase integration and handling user interactions -->
+     <script src="./javaScriptFiles/index.js"></script>
+</body>
+
+</html>

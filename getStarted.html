@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Easy Split</title>
+  <!-- Link to the external JavaScript file 'asd.js' -->
+  <script language="javascript" type="text/javascript" src="asd.js"></script>
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- firebase services we are able to use only if we include these scripts in our file 
+		i> for firebase initialization
+		ii> for firebase authentication service
+		iii> for firebase realtime database service
+	-->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <link rel="stylesheet" href="./cssFiles//getStarted.css">
+  <link rel="icon" href="./image.ico">
+</head>
+
+<body>
+  <!-- Top Navigation Bar -->
+  <div class="topnav">
+    <!-- Logo -->
+    <div style="text-align: center;"><a href="index.html"><img src="https://i.ibb.co/YdzQRG3/11.png" width="160" height="43.5" ></a></div>
+    <button id="Register"><a href="signUp.html">Register</a></button>
+    <button id="Logout" hidden="hidden" onclick="logoutfunc()"><a href="index.html">Log Out</a></button>
+    <button id="About"><a class="active" href="about.html">About</a></button>
+    <button id="Howtouse"><a href="howtouse.html">How to use</a></button>
+    <button id="Contact"><a href="contact.html">Meet us</a></button>
+  </div>
+
+  <!-- Heading for the webpage -->
+  <h1>Split your expenses</h1>
+
+  <!-- Save as PDF button (hidden by default) -->
+  <button class="save-btn" id="pdf-btn" hidden="hidden"><i class="fa fa-download" style="font-size:32px;"></i></button>
+  <!-- Save to server button (hidden by default) -->
+  <button class="save-btn" id="server-btn" hidden="hidden"><i class="fa fa-save" style="font-size:32px;"></i></button>
+
+  <!-- Form to display the trip name -->
+  <form name="index" action="getStarted.html" method="get">
+    <h2 id="here"></h2>
+  </form>
+  <!-- Container to add person inputs dynamically -->
+  <div id="person-inputs">
+    <div class="input-group" id="person-1">
+      <h3>Person 1:</h3>
+      <input type="text" id="userName-1" placeholder="Enter name">
+      <input type="text" id="userUPI-1" placeholder="example23@ybl">
+      <div id="amount-1">
+        <!-- Table to enter purposes and amounts -->
+        <table>
+          <tr>
+            <th>Purpose</th>
+            <th>Amount</th>
+          </tr>
+          <tr>
+            <td><input type="text" class="userPurpose" placeholder="Enter Purpose"></td>
+            <td><input type="number" class="userAmount" placeholder="Enter amount"></td>
+          </tr>
+        </table>
+        <!-- Add Column and Remove Column buttons for purposes and amounts -->
+        <button class="add-col-btn" onclick="addCol(1)">Add Column</button>
+        <button class="remove-col-btn" onclick="removeCol(1)">Remove Column</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="add-person-btn">Add Person</button>
+
+  <button id="calculate-btn">Calculate</button>
+
+  <button id="remove-person-btn">Remove Person</button>
+
+  <h3 id="head"></h3>
+  <div id="person-results">
+    <!-- <div class="result-group">
+      <div id="content-1" ></div>
+      <button id="upi-btn-1" hidden="hidden" onclick="setVisibility_of_UPI()">Show UPI Id</button>
+      <div id="display-upi-1"></div>
+    </div> -->
+  </div>
+
+  <!-- Script for generating PDF -->
+  <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+
+  <!-- JavaScript code for handling user login/logout, input fields, and calculations -->
+  <script src="./javaScriptFiles/getStarted.js"></script>
+</body>
+
+</html>

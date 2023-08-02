@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+	<!-- firebase services we are able to use only if we include these scripts in our file 
+		i> for firebase initialization
+		ii> for firebase authentication service
+		iii> for firebase realtime database service
+	-->
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+     <link rel="stylesheet" href="./cssFiles//signUp.css">
+     <link rel="icon" href="./image.ico">
+</head>
+
+<body>
+
+	<div class="container" id="container">
+		<!-- Sign Up Form -->
+		<div class="form-container sign-up-container">
+			<form action="javascript:void(0);" id="form-id">
+				<h1>Create Account</h1>
+				<input id="username" type="text" placeholder="Name" />
+				<input id="email1" type="email" placeholder="Email" />
+				<input id="password1" type="password" placeholder="Password" />
+				<button id="register">Sign Up</button>
+			</form>
+		</div>
+		<!-- Sign In Form -->
+		<div class="form-container sign-in-container">
+			<form action="javascript:void(0);">
+				<h1>Sign in</h1>
+				<input id="email2" type="email" placeholder="Email" />
+				<input id="password2" type="password" placeholder="Password" />
+				<div id="forgot-password" onclick="forgetPassword()">Forgot your password?</div>
+				<button id="login">Sign In</button>
+			</form>
+		</div>
+		<!-- Overlay for sliding animation -->
+		<div class="overlay-container">
+			<div class="overlay">
+				<!-- Left Overlay Panel -->
+				<div class="overlay-panel overlay-left">
+					<div style="text-align: center;"><a href="index.html"><img src="https://i.ibb.co/YdzQRG3/11.png" width="160" height="43.5" ></a></div>
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<!-- Right Overlay Panel -->
+				<div class="overlay-panel overlay-right">
+					<div style="text-align: center;"><a href="index.html"><img src="https://i.ibb.co/YdzQRG3/11.png" width="160" height="43.5" ></a></div>
+					<h1>Hello, Friend!</h1>
+					<p>Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <script src="./javaScriptFiles/signUp.js"></script>
+</body>
+
+</html>
